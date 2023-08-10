@@ -1,6 +1,14 @@
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Banner from './components/Banner'
 import Header from './components/Header'
 import { GlobalStyle, Container } from './styles'
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Banner />
+  }
+])
 
 function App() {
   return (
@@ -9,7 +17,7 @@ function App() {
       <Container>
         <Header />
       </Container>
-      <Banner />
+      <RouterProvider router={router} />
     </>
   )
 }
