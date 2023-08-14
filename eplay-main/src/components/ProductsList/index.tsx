@@ -1,47 +1,28 @@
+import Game from '../../models/Game'
 import Product from '../Product'
 import { Container, List, Title } from './styles'
 
 export type Props = {
   title: string
   background: 'gray' | 'black'
+  games: Game[]
 }
-const ProductsList = ({ background, title }: Props) => (
+const ProductsList = ({ background, title, games }: Props) => (
   <Container background={background}>
     <div className="container">
       <Title>{title}</Title>
       <List>
-        <Product
-          title="nome do jogo"
-          category="RPG"
-          system="PS5"
-          description="teste"
-          infos={['-10%', 'R$ 150,00']}
-          image="//placehold.it/222x250"
-        />
-        <Product
-          title="nome do jogo"
-          category="RPG"
-          system="PS5"
-          description="teste"
-          infos={['-10%', 'R$ 150,00']}
-          image="//placehold.it/222x250"
-        />
-        <Product
-          title="nome do jogo"
-          category="RPG"
-          system="PS5"
-          description="teste"
-          infos={['-10%', 'R$ 150,00']}
-          image="//placehold.it/222x250"
-        />
-        <Product
-          title="nome do jogo"
-          category="RPG"
-          system="PS5"
-          description="teste"
-          infos={['-10%', 'R$ 150,00']}
-          image="//placehold.it/222x250"
-        />
+        {games.map((game) => (
+          <Product
+            key={game.id}
+            title={game.title}
+            category={game.category}
+            system={game.system}
+            description={game.description}
+            infos={game.infos}
+            image={game.image}
+          />
+        ))}
       </List>
     </div>
   </Container>
