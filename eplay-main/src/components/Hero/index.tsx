@@ -16,6 +16,7 @@ const Hero = () => (
           Por R$ 190,00
         </p>
         <Button
+          to="/"
           type="button"
           title="Clique aqui para adicionar ao carrinho"
           variant="primary"

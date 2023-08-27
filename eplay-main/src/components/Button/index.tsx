@@ -20,6 +20,7 @@ const Button = ({
     return (
       <ButtonContainer
         variant={variant}
+        to=""
         type="button"
         title={title}
         onClick={onClick}
