@@ -9,6 +9,13 @@ export const Card = styled.div`
   border-radius: 8px;
   position: relative;
 
+  img {
+    width: 100%;
+    display: block;
+    height: 250px;
+    object-fit: cover;
+  }
+
   ${TagContainer} {
     margin-right: 8px;
   }
@@ -17,6 +24,7 @@ export const Title = styled.h3`
   font-weight: bold;
   font-size: 16px;
   color: ${colors.white};
+  margin-top: 8px;
   margin-bottom: 8px;
   display: block;
 `
